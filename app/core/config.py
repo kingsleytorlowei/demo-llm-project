@@ -1,0 +1,4 @@
+ALLOWED_ORIGINS = ["*"]
+PROJECT_NAME = "LLM-based API"
+PROJECT_VERSION = "0.1.0"
+PROJECT_DESCRIPTION = "API for the LLM-based project"
