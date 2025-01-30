@@ -1,0 +1,34 @@
+# Virtual environment
+.venv/
+env/
+
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# FastAPI specific
+.pytest_cache/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# IDE specific (for PyCharm)
+.idea/
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
