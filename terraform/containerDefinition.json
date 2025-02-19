@@ -1,0 +1,31 @@
+[
+    {
+        "essential": true,
+        "image": "${aws_ecr_repository.demo_project.repository_url}:latest",
+        "name": "${var.namespace}-worker",
+        "memory": 1024,
+        "cpu": 1024,
+        "networkMode": "host",
+        "portMappings": [
+            {
+                "containerPort": 8000,
+                "hostPort": 8000,
+                "protocol": "tcp"
+            }
+        ],
+        "environment": [
+            {
+                "name": "OPENAI_API_KEY",
+                "value": "${data.aws_ssm_parameter.openai_api_key.value}"
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "${aws_cloudwatch_log_group.demo_llm_logs.name}",
+                "awslogs-region": "${var.region}",
+                "awslogs-stream-prefix": "worker"
+            }
+        }
+    }
+]
